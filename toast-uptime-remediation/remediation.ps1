@@ -57,7 +57,7 @@ if(!(Test-Path -Path $env:windir\IT\Scripts\Remediations)) {
     $scriptContent | Out-File $dirPath\Uptime-Remediation.ps1
 }
 
-Start-Process powershell.exe -ArgumentList $dirPath\Uptime-Remediation.ps1 -WindowStyle hidden
+Start-Process -WindowStyle hidden powershell.exe -ArgumentList $dirPath\Uptime-Remediation.ps1
 
 # No longer required since rewrite, but can still be used if you edit this above to start using some PS7 exclusive functions...
 # Check if running with PowerShell 7 or higher
