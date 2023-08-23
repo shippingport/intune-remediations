@@ -9,4 +9,5 @@ Sends a toast notification using BuntToast to the currently logged in user that 
 Requires PowerShell 5.1 or later.
 
 The function *Invoke-AsCurrentUser* from the PS module *RunAsUser* requires running as NT AUTHORITY\SYSTEM. You can use the SysInternals utility PsExec to run PowerShell as this user for testing purposes, eg.:
+
 `Start-Process -FilePath cmd.exe -Verb Runas -ArgumentList '/k C:\SysinternalsSuite\PsExec.exe -i -s powershell.exe $env:psscriptdev\intune\remediations\toast-uptime-remediation\remediation.ps1'`
