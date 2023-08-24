@@ -5,7 +5,7 @@ These are some remediations I use frequently in Intune/Microsoft Endpoint Manage
 ## Remediations included
 
 ### Toast-uptime-remediation
-Sends a toast notification using BuntToast to the currently logged in user that their computer's uptime has exceeded 7 days. The toast notification allows the user to snooze for up to 4 hours, and forces a reboot after that.
+Sends a toast notification using BurntToast to the currently logged in user that their computer's uptime has exceeded 7 days. The toast notification allows the user to snooze for up to 4 hours, and forces a reboot after that.
 Requires PowerShell 5.1 or later.
 
 The function *Invoke-AsCurrentUser* from the PS module *RunAsUser* requires running as NT AUTHORITY\SYSTEM. You can use the SysInternals utility PsExec to run PowerShell as this user for testing purposes, eg.:
