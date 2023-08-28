@@ -4,7 +4,7 @@ These are some remediations I use frequently in Intune/Microsoft Endpoint Manage
 
 ## Remediations included
 
-### Toast-uptime-remediation
+### Toast uptime remediation
 **What it does:** This remediation sends a toast notification to any logged in user requesting that they reboot within a four-hour window. If not acted upon, it forces a reboot after four hours.
 
 Sends a toast notification using BurntToast to the currently logged in user that their computer's uptime has exceeded 7 days. The toast notification allows the user to snooze for up to 4 hours, and forces a reboot after that.
