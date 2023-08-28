@@ -11,3 +11,19 @@ Requires PowerShell 5.1 or later.
 The function *Invoke-AsCurrentUser* from the PS module *RunAsUser* requires running as NT AUTHORITY\SYSTEM. You can use the SysInternals utility PsExec to run PowerShell as this user for testing purposes, eg.:
 
 `Start-Process -FilePath cmd.exe -Verb Runas -ArgumentList '/k C:\SysinternalsSuite\PsExec.exe -i -s powershell.exe $env:psscriptdev\intune\remediations\toast-uptime-remediation\remediation.ps1'`
+
+### Set Outlook Web Access (OWA) as default mailto-protocol handler
+This is a two parter.
+First, add the following protocol handler to your Microsoft Edge policy using either Intune or a GPO:
+
+1. Under "Microsoft Edge - Default Settings (users can override)" add Register protocol handlers (Device).
+2. The handler to add is:
+`[
+  {
+    "default": true,
+    "protocol": "mailto",
+    "url": "https://outlook.office.com/owa/?&rru=compose&to=%s"
+  }
+]`
+
+Then
