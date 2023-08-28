@@ -18,12 +18,13 @@ First, add the following protocol handler to your Microsoft Edge policy using ei
 
 1. Under "Microsoft Edge - Default Settings (users can override)" add Register protocol handlers (Device).
 2. The handler to add is:
-`[
+```
+[
   {
     "default": true,
     "protocol": "mailto",
     "url": "https://outlook.office.com/owa/?&rru=compose&to=%s"
   }
-]`
-
-Then
+]
+```
+Then add the remediation using the files provided. Set *Run this script using the logged-on credentials* to Yes/True.
