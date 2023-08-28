@@ -16,7 +16,7 @@ The function *Invoke-AsCurrentUser* from the PS module *RunAsUser* requires runn
 
 
 ### Set Outlook Web Access (OWA) as default mailto-protocol handler
-**What it does:** This remediation add a protocol handler to Microsoft Edge to open mailto-links in Outlook Web Access, and then edits the registry to always open mailto-links in Edge. The result is that mailto-links will open in OWA system-wide.
+**What it does:** This remediation adds a protocol handler to Microsoft Edge to open mailto-links in Outlook Web Access, and then edits the registry to always open mailto-links in Edge. The result is that mailto-links will open in OWA system-wide.
 
 First, add the following protocol handler to your Microsoft Edge policy using either Intune or a GPO:
 
