@@ -14,6 +14,7 @@ The function *Invoke-AsCurrentUser* from the PS module *RunAsUser* requires runn
 
 `Start-Process -FilePath cmd.exe -Verb Runas -ArgumentList '/k C:\SysinternalsSuite\PsExec.exe -i -s powershell.exe $env:psscriptdev\intune\remediations\toast-uptime-remediation\remediation.ps1'`
 
+
 ### Set Outlook Web Access (OWA) as default mailto-protocol handler
 **What it does:** This remediation add a protocol handler to Microsoft Edge to open mailto-links in Outlook Web Access, and then edits the registry to always open mailto-links in Edge. The result is that mailto-links will open in OWA system-wide.
 
