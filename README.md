@@ -32,3 +32,7 @@ First, add the following protocol handler to your Microsoft Edge policy using ei
 ]
 ```
 Then add the remediation using the files provided. Set *Run this script using the logged-on credentials* to Yes/True.
+
+
+### Remove Java
+Uninstalls all Java programs from the target computers.
