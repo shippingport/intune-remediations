@@ -2,7 +2,11 @@
 [array]$InstalledPrograms = $null
 $InstalledPrograms += Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
 $InstalledPrograms += Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
-$InstalledPrograms += Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
+
+# In order to detect programs installed as CurrentUser, make sure to check "Run this script using the logged-on credentials" in Intune.
+# Also comment or remove the two lines referencing HKEY_LOCAL_MACHINE, since CurrentUser obviously can't uninstall machine-level installs unless they have local admin (which they shouldn't have!)
+# Then uncomment the line below. Also make sure to add a check for Wow6432Node.
+#$InstalledPrograms += Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall"
 
 Write-Host "Checking for installed Java software..."
 
