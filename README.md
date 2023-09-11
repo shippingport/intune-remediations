@@ -36,3 +36,6 @@ Then add the remediation using the files provided. Set *Run this script using th
 
 ### Remove Java
 Uninstalls all Java programs from the target computers.
+
+### Remove TeamViewer
+Removes TeamViewer from the target computers.
