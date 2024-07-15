@@ -39,3 +39,6 @@ Uninstalls all Java programs from the target computers.
 
 ### Remove TeamViewer
 Removes TeamViewer from the target computers.
+
+### disable-fast-startup
+Disables fast startup by setting the feature to disabled in the registry.
