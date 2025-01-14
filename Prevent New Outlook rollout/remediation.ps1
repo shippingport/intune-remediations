@@ -1,4 +1,5 @@
 # Remediation script for NewOutlookMigrationUserSetting.
+# Make sure the remediation is run in the 64-bit PowerShell host so as to prevent the key being created under the (wrong) Wow6432Node.
 
 # Get the current user's SID
 $SID = (New-Object -ComObject Microsoft.DiskQuota).TranslateLogonNameToSID((Get-CimInstance -ClassName Win32_ComputerSystem).Username)
