@@ -1,5 +1,4 @@
 # Detection script for NewOutlookMigrationUserSetting.
-# Make sure the remediation is run in the 64-bit PowerShell host so as to prevent the key being created under the (wrong) Wow6432Node.
 
 # Get the current user's SID
 $SID = (New-Object -ComObject Microsoft.DiskQuota).TranslateLogonNameToSID((Get-CimInstance -ClassName Win32_ComputerSystem).Username)
@@ -14,7 +13,7 @@ If([string]::IsNullOrEmpty($SID)) {
     $Path = "registry::HKU\$SID\Software\Policies\Microsoft\Office\16.0\Outlook\Preferences"
     $Name = "NewOutlookMigrationUserSetting"
 
-    If((Get-Item -Path $Path).Property -Contains $Name) {
+    If((Get-Item -Path $Path -ErrorAction SilentlyContinue).Property -Contains $Name) {
         # Path exits, check its value
         $Result = Get-ItemProperty -Path $Path -Name $Name
         $Result = $Result.NewOutlookMigrationUserSetting
