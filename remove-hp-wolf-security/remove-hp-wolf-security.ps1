@@ -12,8 +12,8 @@ Function Uninstall-Program($Package) {
         $Regex = "{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}"
         $GUID = (Select-String -InputObject $TargetApp.UninstallString -Pattern $Regex -AllMatches).Matches.Value
     
-        # Uninstall by calling CMD, which seems to work more reliably than using Start-Process
-        cmd /c "msiexec.exe /x $GUID /qn"
+        # Kick off the uninstall and wait
+        Start-Process -Passthru -FilePath msiexec.exe "/x $GUID /qn" | Wait-Process
     } else {
         Write-Error -Message "UninstallString malformed or not present for application" $Package.Name
     }
